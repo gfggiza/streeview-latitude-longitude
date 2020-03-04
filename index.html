@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Streetview link viewer</title>
+</head>
+
+<body>
+    <br><br>
+    <div
+        style="font-size:30px;font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: center;display: block;position:relative;left:50%;transform: translateX(-50%);">
+        <h4 style="margin-bottom: 20px;">Insira abaixo Latitude e Longitude</h4>
+        <p style="font-size: 40px;
+        margin-top: 0px!important;
+        margin-bottom: 20px;
+        font-weight: bold;">↓</p>
+    </div>
+
+
+    <div style="position: relative;left: 50%;transform: translateX(-50%);width: 400px;height: 60px;">
+        <div style="width: 200px;float: left;">
+            Latitude:
+            <input type="text" id="lat" style="height: 30px;">
+        </div>
+        <div style="width: 200px;float: right;">
+            Longitude:
+            <input type="text" id="log" style="height: 30px;">
+        </div>
+    </div>
+    <button id="send" onclick="BtnClick()"
+        style="display: block;position:relative;left:50%;transform: translateX(-50%);margin-top:20px;background-color: rgb(36, 133, 179); padding:10px 20px;font-size:25px; border-radius: 5px;color:white;">Enviar</button>
+    <br>
+    <iframe style="display: block;position:relative;left:50%;transform: translateX(-50%); " src="url" width="1000"
+        height="600" frameborder="0" style="border:0;" allowfullscreen="" id="place-url"></iframe>
+
+
+
+    <script>
+        function BtnClick() {
+            let lat = document.getElementById("lat").value;
+            let log = document.getElementById("log").value;
+            //let url = "https://www.google.com/maps/@"+lat+","+log+","+"3a,75y,102.39h,84.51t/data=!3m7!1e1!3m5!1snRptGGWbM9J-juBr47RSbA!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DnRptGGWbM9J-juBr47RSbA%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D138.1009%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656";
+            //let url = "//maps.google.com/maps?layer=c&amp;cbll={"+lat+"},{"+log+"}&amp;"+"cbp=,{50},{12},{50},{20}&amp;source=embed&amp;output=svembed" ;
+            let url = "https://www.google.com/maps/embed?pb=!4v1583355457008!6m8!1m7!1sCAoSK0FGMVFpcFBXZlRRVkRjN29VZzVhaERwanMyNVAtQjNRWTFJVWxma2Zvd1E.!2m2!1d"+lat+"!2d"+log+"!3f133.8037227633895!4f6.622746225973685!5f0.7820865974627469";
+            
+
+            let el = document.getElementById("place-url");
+            el.src = url;
+            //window.open(url)
+        }
+    </script>
+</body>
+
+</html>
