@@ -43,14 +43,10 @@
         function BtnClick() {
             let lat = document.getElementById("lat").value;
             let log = document.getElementById("log").value;
-            //let url = "https://www.google.com/maps/@"+lat+","+log+","+"3a,75y,102.39h,84.51t/data=!3m7!1e1!3m5!1snRptGGWbM9J-juBr47RSbA!2e0!6s%2F%2Fgeo2.ggpht.com%2Fcbk%3Fpanoid%3DnRptGGWbM9J-juBr47RSbA%26output%3Dthumbnail%26cb_client%3Dmaps_sv.tactile.gps%26thumb%3D2%26w%3D203%26h%3D100%26yaw%3D138.1009%26pitch%3D0%26thumbfov%3D100!7i13312!8i6656";
-            //let url = "//maps.google.com/maps?layer=c&amp;cbll={"+lat+"},{"+log+"}&amp;"+"cbp=,{50},{12},{50},{20}&amp;source=embed&amp;output=svembed" ;
-            let url = "https://www.google.com/maps/embed?pb=!4v1583355457008!6m8!1m7!1sCAoSK0FGMVFpcFBXZlRRVkRjN29VZzVhaERwanMyNVAtQjNRWTFJVWxma2Zvd1E.!2m2!1d"+lat+"!2d"+log+"!3f133.8037227633895!4f6.622746225973685!5f0.7820865974627469";
-            
+            let url = "https://www.google.com/maps/embed/v1/streetview?key=YOUR_API_KEY&location="+lat+","+log+"&heading=210&pitch=10&fov=35";
 
             let el = document.getElementById("place-url");
             el.src = url;
-            //window.open(url)
         }
     </script>
 </body>
